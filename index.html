@@ -5,10 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DIP - Lecture 1 Full</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* Simple smooth accordion animation */
+.accordion-content {
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  overflow: hidden;
+}
+</style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
 
-<header class="bg-blue-600 text-white p-4 text-center">
+<header class="bg-blue-600 text-white p-4 text-center shadow">
     <h1 class="text-2xl font-bold">Digital Image Processing - Lecture 1 (Full)</h1>
 </header>
 
@@ -19,12 +26,12 @@
         <h2 class="text-xl font-semibold mb-2">Lecture Content</h2>
         <div id="accordion" class="space-y-2">
 
-            <!-- What is a Digital Image? -->
+            <!-- Example accordion item -->
             <div class="border border-gray-300 rounded">
                 <button class="w-full text-left p-4 bg-gray-200 hover:bg-gray-300 focus:outline-none accordion-button">
                     What is a Digital Image?
                 </button>
-                <div class="p-4 hidden accordion-content bg-white space-y-2">
+                <div class="accordion-content max-h-0 p-0 bg-white space-y-2">
                     <p>A digital image is a representation of a two-dimensional image as a finite set of digital values called pixels.</p>
                     <p>Each pixel represents a gray level (intensity) or color.</p>
                     <p>Digitization implies approximation: a digital image is always an approximation of the real scene.</p>
@@ -36,19 +43,16 @@
                 </div>
             </div>
 
-            <!-- What is Digital Image Processing? -->
             <div class="border border-gray-300 rounded">
                 <button class="w-full text-left p-4 bg-gray-200 hover:bg-gray-300 focus:outline-none accordion-button">
                     What is Digital Image Processing?
                 </button>
-                <div class="p-4 hidden accordion-content bg-white space-y-2">
-                    <p>Digital Image Processing (DIP) focuses on:</p>
+                <div class="accordion-content max-h-0 p-0 bg-white space-y-2">
                     <ul class="list-disc ml-5">
                         <li>Improving pictorial information for human interpretation.</li>
                         <li>Processing image data for storage, transmission, or autonomous machine perception.</li>
                     </ul>
-                    <p>Low-level, mid-level, high-level processing:</p>
-                    <ul class="list-disc ml-5">
+                    <ul class="list-disc ml-5 mt-2">
                         <li>Low-Level: Image → Image (Noise removal, sharpening)</li>
                         <li>Mid-Level: Image → Attributes (Segmentation, object recognition)</li>
                         <li>High-Level: Attributes → Understanding (Scene understanding, autonomous navigation)</li>
@@ -56,12 +60,12 @@
                 </div>
             </div>
 
-            <!-- History of DIP -->
+            <!-- History -->
             <div class="border border-gray-300 rounded">
                 <button class="w-full text-left p-4 bg-gray-200 hover:bg-gray-300 focus:outline-none accordion-button">
                     History of Digital Image Processing
                 </button>
-                <div class="p-4 hidden accordion-content bg-white space-y-2">
+                <div class="accordion-content max-h-0 p-0 bg-white space-y-2">
                     <p>1920s: Bartlane cable picture transmission service.</p>
                     <p>1960s: Space race → processing images of the Moon (Ranger 7 probe).</p>
                     <p>1970s: Medical applications (CAT scans, Nobel Prize for tomography).</p>
@@ -77,46 +81,6 @@
                 </div>
             </div>
 
-            <!-- Examples of DIP -->
-            <div class="border border-gray-300 rounded">
-                <button class="w-full text-left p-4 bg-gray-200 hover:bg-gray-300 focus:outline-none accordion-button">
-                    Examples of Digital Image Processing
-                </button>
-                <div class="p-4 hidden accordion-content bg-white space-y-2">
-                    <ul class="list-disc ml-5">
-                        <li>Image enhancement (noise removal, quality improvement)</li>
-                        <li>Hubble Telescope image correction</li>
-                        <li>Artistic effects & composite images</li>
-                        <li>Medical: MRI, CT scan visualization & edge detection</li>
-                        <li>GIS: Satellite image analysis</li>
-                        <li>Industrial inspection: PCB quality checks</li>
-                        <li>Law enforcement: License plate recognition, CCTV enhancement</li>
-                        <li>Human-Computer Interface: Face and gesture recognition</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Key stages in DIP -->
-            <div class="border border-gray-300 rounded">
-                <button class="w-full text-left p-4 bg-gray-200 hover:bg-gray-300 focus:outline-none accordion-button">
-                    Key Stages in Digital Image Processing
-                </button>
-                <div class="p-4 hidden accordion-content bg-white space-y-2">
-                    <ul class="list-disc ml-5">
-                        <li>Image Acquisition</li>
-                        <li>Image Restoration</li>
-                        <li>Morphological Processing</li>
-                        <li>Segmentation</li>
-                        <li>Representation & Description</li>
-                        <li>Image Enhancement</li>
-                        <li>Object Recognition</li>
-                        <li>Problem Domain</li>
-                        <li>Colour Image Processing</li>
-                        <li>Image Compression</li>
-                    </ul>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -124,49 +88,75 @@
     <section>
         <h2 class="text-xl font-semibold mb-2">Quiz</h2>
         <div class="bg-white p-4 rounded shadow space-y-4">
-            <div>
-                <p class="mb-2">1. Digital images are an exact representation of real-world scenes. (True/False)</p>
-                <button class="quiz-btn bg-blue-500 text-white px-3 py-1 rounded" data-answer="false">True</button>
-                <button class="quiz-btn bg-gray-300 px-3 py-1 rounded" data-answer="true">False</button>
+
+            <!-- Question 1 -->
+            <div class="quiz-question p-3 border rounded">
+                <p class="mb-2 font-semibold">1. Digital images are an exact representation of real-world scenes. (True/False)</p>
+                <div class="flex gap-2">
+                    <button class="quiz-btn px-3 py-1 rounded bg-blue-500 text-white" data-answer="false">True</button>
+                    <button class="quiz-btn px-3 py-1 rounded bg-gray-300" data-answer="false">False</button>
+                </div>
+                <div class="quiz-result mt-2 font-semibold"></div>
             </div>
-            <div>
-                <p class="mb-2">2. Low-level image processing outputs another image. (True/False)</p>
-                <button class="quiz-btn bg-blue-500 text-white px-3 py-1 rounded" data-answer="true">True</button>
-                <button class="quiz-btn bg-gray-300 px-3 py-1 rounded" data-answer="false">False</button>
+
+            <!-- Question 2 -->
+            <div class="quiz-question p-3 border rounded">
+                <p class="mb-2 font-semibold">2. Low-level image processing outputs another image. (True/False)</p>
+                <div class="flex gap-2">
+                    <button class="quiz-btn px-3 py-1 rounded bg-blue-500 text-white" data-answer="true">True</button>
+                    <button class="quiz-btn px-3 py-1 rounded bg-gray-300" data-answer="true">False</button>
+                </div>
+                <div class="quiz-result mt-2 font-semibold"></div>
             </div>
-            <div>
-                <p class="mb-2">3. High-level processing produces image outputs. (True/False)</p>
-                <button class="quiz-btn bg-blue-500 text-white px-3 py-1 rounded" data-answer="false">True</button>
-                <button class="quiz-btn bg-gray-300 px-3 py-1 rounded" data-answer="true">False</button>
+
+            <!-- Question 3 -->
+            <div class="quiz-question p-3 border rounded">
+                <p class="mb-2 font-semibold">3. High-level processing produces image outputs. (True/False)</p>
+                <div class="flex gap-2">
+                    <button class="quiz-btn px-3 py-1 rounded bg-blue-500 text-white" data-answer="false">True</button>
+                    <button class="quiz-btn px-3 py-1 rounded bg-gray-300" data-answer="false">False</button>
+                </div>
+                <div class="quiz-result mt-2 font-semibold"></div>
             </div>
-            <div id="quiz-result" class="mt-4 font-semibold"></div>
+
         </div>
     </section>
 
 </main>
 
 <script>
-    // Accordion
+    // Accordion Animation
     document.querySelectorAll('.accordion-button').forEach(btn => {
         btn.addEventListener('click', () => {
-            btn.nextElementSibling.classList.toggle('hidden');
+            const content = btn.nextElementSibling;
+            if(content.classList.contains('max-h-0')) {
+                content.classList.remove('max-h-0','p-0');
+                content.classList.add('p-4');
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+                content.classList.add('max-h-0','p-0');
+                content.classList.remove('p-4');
+            }
         });
     });
 
-    // Quiz
-    document.querySelectorAll('.quiz-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const correct = btn.dataset.answer === "true";
-            const result = document.getElementById('quiz-result');
-            if(correct){
-                result.textContent = "✅ Correct!";
-                result.classList.add('text-green-600');
-                result.classList.remove('text-red-600');
-            } else {
-                result.textContent = "❌ Incorrect!";
-                result.classList.add('text-red-600');
-                result.classList.remove('text-green-600');
-            }
+    // Quiz Logic
+    document.querySelectorAll('.quiz-question').forEach(q => {
+        q.querySelectorAll('.quiz-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const correct = btn.dataset.answer === "true";
+                const resultDiv = q.querySelector('.quiz-result');
+                if(correct){
+                    resultDiv.textContent = "✅ Correct!";
+                    resultDiv.classList.add('text-green-600');
+                    resultDiv.classList.remove('text-red-600');
+                } else {
+                    resultDiv.textContent = "❌ Incorrect!";
+                    resultDiv.classList.add('text-red-600');
+                    resultDiv.classList.remove('text-green-600');
+                }
+            });
         });
     });
 </script>
