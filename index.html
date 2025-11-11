@@ -1,106 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Image Processing - Lecture 1</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIP - Lecture 1 Full</title>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
 
-    <header class="bg-blue-600 text-white p-4 text-center">
-        <h1 class="text-2xl font-bold">Digital Image Processing - Lecture 1</h1>
-    </header>
+<header class="bg-blue-600 text-white p-4 text-center">
+    <h1 class="text-2xl font-bold">Digital Image Processing - Lecture 1 (Full)</h1>
+</header>
 
-    <main class="max-w-4xl mx-auto p-6 space-y-6">
+<main class="max-w-5xl mx-auto p-6 space-y-6">
 
-        <!-- Accordion Section -->
-        <section>
-            <h2 class="text-xl font-semibold mb-2">Lecture Content</h2>
-            <div id="accordion" class="space-y-2">
-                <div class="border border-gray-300 rounded">
-                    <button class="w-full text-left p-4 bg-gray-200 hover:bg-gray-300 focus:outline-none accordion-button">
-                        What is a Digital Image?
-                    </button>
-                    <div class="p-4 hidden accordion-content bg-white">
-                        <p>A digital image is a representation of a two-dimensional image as a finite set of digital values called pixels. Each pixel represents intensity (gray level) or color in the image.</p>
-                    </div>
-                </div>
+    <!-- Accordion Section -->
+    <section>
+        <h2 class="text-xl font-semibold mb-2">Lecture Content</h2>
+        <div id="accordion" class="space-y-2">
 
-                <div class="border border-gray-300 rounded">
-                    <button class="w-full text-left p-4 bg-gray-200 hover:bg-gray-300 focus:outline-none accordion-button">
-                        What is Digital Image Processing?
-                    </button>
-                    <div class="p-4 hidden accordion-content bg-white">
-                        <p>Digital Image Processing focuses on improving pictorial information for human interpretation and processing image data for storage, transmission, and machine perception.</p>
-                    </div>
-                </div>
-
-                <div class="border border-gray-300 rounded">
-                    <button class="w-full text-left p-4 bg-gray-200 hover:bg-gray-300 focus:outline-none accordion-button">
-                        Key Stages in Digital Image Processing
-                    </button>
-                    <div class="p-4 hidden accordion-content bg-white">
-                        <ul class="list-disc ml-5 space-y-1">
-                            <li>Image Acquisition</li>
-                            <li>Image Enhancement</li>
-                            <li>Image Restoration</li>
-                            <li>Segmentation</li>
-                            <li>Representation & Description</li>
-                            <li>Object Recognition</li>
-                            <li>Image Compression</li>
-                        </ul>
-                    </div>
+            <!-- What is a Digital Image? -->
+            <div class="border border-gray-300 rounded">
+                <button class="w-full text-left p-4 bg-gray-200 hover:bg-gray-300 focus:outline-none accordion-button">
+                    What is a Digital Image?
+                </button>
+                <div class="p-4 hidden accordion-content bg-white space-y-2">
+                    <p>A digital image is a representation of a two-dimensional image as a finite set of digital values called pixels.</p>
+                    <p>Each pixel represents a gray level (intensity) or color.</p>
+                    <p>Digitization implies approximation: a digital image is always an approximation of the real scene.</p>
+                    <p>Common image formats:</p>
+                    <ul class="list-disc ml-5">
+                        <li>1 sample per point (B&W or Grayscale)</li>
+                        <li>3 samples per point (RGB Coloring System)</li>
+                    </ul>
                 </div>
             </div>
-        </section>
 
-        <!-- Quiz Section -->
-        <section>
-            <h2 class="text-xl font-semibold mb-2">Quiz</h2>
-            <div class="bg-white p-4 rounded shadow space-y-4">
-                <div>
-                    <p class="mb-2">1. A digital image is made up of pixels. (True/False)</p>
-                    <button class="quiz-btn bg-blue-500 text-white px-3 py-1 rounded" data-answer="true">True</button>
-                    <button class="quiz-btn bg-gray-300 px-3 py-1 rounded" data-answer="false">False</button>
+            <!-- What is Digital Image Processing? -->
+            <div class="border border-gray-300 rounded">
+                <button class="w-full text-left p-4 bg-gray-200 hover:bg-gray-300 focus:outline-none accordion-button">
+                    What is Digital Image Processing?
+                </button>
+                <div class="p-4 hidden accordion-content bg-white space-y-2">
+                    <p>Digital Image Processing (DIP) focuses on:</p>
+                    <ul class="list-disc ml-5">
+                        <li>Improving pictorial information for human interpretation.</li>
+                        <li>Processing image data for storage, transmission, or autonomous machine perception.</li>
+                    </ul>
+                    <p>Low-level, mid-level, high-level processing:</p>
+                    <ul class="list-disc ml-5">
+                        <li>Low-Level: Image → Image (Noise removal, sharpening)</li>
+                        <li>Mid-Level: Image → Attributes (Segmentation, object recognition)</li>
+                        <li>High-Level: Attributes → Understanding (Scene understanding, autonomous navigation)</li>
+                    </ul>
                 </div>
-                <div>
-                    <p class="mb-2">2. Image processing outputs are always for computer use. (True/False)</p>
-                    <button class="quiz-btn bg-blue-500 text-white px-3 py-1 rounded" data-answer="false">True</button>
-                    <button class="quiz-btn bg-gray-300 px-3 py-1 rounded" data-answer="true">False</button>
-                </div>
-                <div id="quiz-result" class="mt-4 font-semibold"></div>
             </div>
-        </section>
 
-    </main>
+            <!-- History of DIP -->
+            <div class="border border-gray-300 rounded">
+                <button class="w-full text-left p-4 bg-gray-200 hover:bg-gray-300 focus:outline-none accordion-button">
+                    History of Digital Image Processing
+                </button>
+                <div class="p-4 hidden accordion-content bg-white space-y-2">
+                    <p>1920s: Bartlane cable picture transmission service.</p>
+                    <p>1960s: Space race → processing images of the Moon (Ranger 7 probe).</p>
+                    <p>1970s: Medical applications (CAT scans, Nobel Prize for tomography).</p>
+                    <p>1980s-today: DIP explosion in:</p>
+                    <ul class="list-disc ml-5">
+                        <li>Image enhancement/restoration</li>
+                        <li>Artistic effects</li>
+                        <li>Medical visualization</li>
+                        <li>Industrial inspection</li>
+                        <li>Law enforcement</li>
+                        <li>Human-computer interfaces</li>
+                    </ul>
+                </div>
+            </div>
 
-    <script>
-        // Accordion functionality
-        document.querySelectorAll('.accordion-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                content.classList.toggle('hidden');
-            });
+            <!-- Examples of DIP -->
+            <div class="border border-gray-300 rounded">
+                <button class="w-full text-left p-4 bg-gray-200 hover:bg-gray-300 focus:outline-none accordion-button">
+                    Examples of Digital Image Processing
+                </button>
+                <div class="p-4 hidden accordion-content bg-white space-y-2">
+                    <ul class="list-disc ml-5">
+                        <li>Image enhancement (noise removal, quality improvement)</li>
+                        <li>Hubble Telescope image correction</li>
+                        <li>Artistic effects & composite images</li>
+                        <li>Medical: MRI, CT scan visualization & edge detection</li>
+                        <li>GIS: Satellite image analysis</li>
+                        <li>Industrial inspection: PCB quality checks</li>
+                        <li>Law enforcement: License plate recognition, CCTV enhancement</li>
+                        <li>Human-Computer Interface: Face and gesture recognition</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Key stages in DIP -->
+            <div class="border border-gray-300 rounded">
+                <button class="w-full text-left p-4 bg-gray-200 hover:bg-gray-300 focus:outline-none accordion-button">
+                    Key Stages in Digital Image Processing
+                </button>
+                <div class="p-4 hidden accordion-content bg-white space-y-2">
+                    <ul class="list-disc ml-5">
+                        <li>Image Acquisition</li>
+                        <li>Image Restoration</li>
+                        <li>Morphological Processing</li>
+                        <li>Segmentation</li>
+                        <li>Representation & Description</li>
+                        <li>Image Enhancement</li>
+                        <li>Object Recognition</li>
+                        <li>Problem Domain</li>
+                        <li>Colour Image Processing</li>
+                        <li>Image Compression</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section>
+        <h2 class="text-xl font-semibold mb-2">Quiz</h2>
+        <div class="bg-white p-4 rounded shadow space-y-4">
+            <div>
+                <p class="mb-2">1. Digital images are an exact representation of real-world scenes. (True/False)</p>
+                <button class="quiz-btn bg-blue-500 text-white px-3 py-1 rounded" data-answer="false">True</button>
+                <button class="quiz-btn bg-gray-300 px-3 py-1 rounded" data-answer="true">False</button>
+            </div>
+            <div>
+                <p class="mb-2">2. Low-level image processing outputs another image. (True/False)</p>
+                <button class="quiz-btn bg-blue-500 text-white px-3 py-1 rounded" data-answer="true">True</button>
+                <button class="quiz-btn bg-gray-300 px-3 py-1 rounded" data-answer="false">False</button>
+            </div>
+            <div>
+                <p class="mb-2">3. High-level processing produces image outputs. (True/False)</p>
+                <button class="quiz-btn bg-blue-500 text-white px-3 py-1 rounded" data-answer="false">True</button>
+                <button class="quiz-btn bg-gray-300 px-3 py-1 rounded" data-answer="true">False</button>
+            </div>
+            <div id="quiz-result" class="mt-4 font-semibold"></div>
+        </div>
+    </section>
+
+</main>
+
+<script>
+    // Accordion
+    document.querySelectorAll('.accordion-button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.nextElementSibling.classList.toggle('hidden');
         });
+    });
 
-        // Quiz functionality
-        document.querySelectorAll('.quiz-btn').forEach(button => {
-            button.addEventListener('click', () => {
-                const correct = button.dataset.answer === "true";
-                const result = document.getElementById('quiz-result');
-                if(correct) {
-                    result.textContent = "✅ Correct!";
-                    result.classList.add('text-green-600');
-                    result.classList.remove('text-red-600');
-                } else {
-                    result.textContent = "❌ Incorrect!";
-                    result.classList.add('text-red-600');
-                    result.classList.remove('text-green-600');
-                }
-            });
+    // Quiz
+    document.querySelectorAll('.quiz-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const correct = btn.dataset.answer === "true";
+            const result = document.getElementById('quiz-result');
+            if(correct){
+                result.textContent = "✅ Correct!";
+                result.classList.add('text-green-600');
+                result.classList.remove('text-red-600');
+            } else {
+                result.textContent = "❌ Incorrect!";
+                result.classList.add('text-red-600');
+                result.classList.remove('text-green-600');
+            }
         });
-    </script>
+    });
+</script>
 
 </body>
 </html>
